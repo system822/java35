@@ -15,7 +15,7 @@ public class TestController {
 	@Autowired
 	private TestService testService;
 	/**
-	 * 跳转到登录页面
+	 * 璺宠浆鍒扮櫥褰曢〉闈�
 	 * @return
 	 */
 	@RequestMapping("/toLogin")
@@ -25,13 +25,14 @@ public class TestController {
 		return mav;
 	}
 	/**
-	 * 登录成功跳转
+	 * 鐧诲綍鎴愬姛璺宠浆
 	 */
 	@RequestMapping("/login")
 	public String login(String name,String password,HttpServletRequest request) {
 		String test = testService.getNameAndPassword(name, password);
 		if(test.equals("success")) {
 			request.setAttribute("message", "success");
+			System.out.println(test);
 			return "loginSuccess";
 		}
 		request.setAttribute("message", "fail");
