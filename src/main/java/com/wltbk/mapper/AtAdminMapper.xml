@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.wltbk.mapper.BaseAccountDao">
+	<!--通过select语句向数据库查询账号密码  -->
+	<select id="getMessageByNameAndPassword" resultType="com.wltbk.bean.EtAdmin">
+		select * from et_admin where name = #{name} and password = #{password}
+	</select>  
+</mapper>
